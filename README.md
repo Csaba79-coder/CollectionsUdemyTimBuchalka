@@ -1,4 +1,4 @@
 # CollectionsUdemyTimBuchalka
 Collections
 
-Arrays, arraylist, sorted arrays, linked list etc. 
+Arrays, arraylist, sorted array, linked list etc. 

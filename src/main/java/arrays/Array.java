@@ -1,6 +1,8 @@
 package arrays;
 
-public class Arrays {
+import java.util.Arrays;
+
+public class Array {
 
     public void printArray(int[] array) {
         for (int num : array) {
@@ -9,10 +11,16 @@ public class Arrays {
     }
 
     public int[] sortedDescendingArrays(int[] array) {
+
+        // refactor the for loop with a built-in function!
+        int[] sortedArray = Arrays.copyOf(array, array.length);
+
+        /*
         int[] sortedArray = new int[array.length];
         for (int i = 0; i < array.length; i++) {
             sortedArray[i] = array[i];
         }
+        */
 
         boolean flag = true;
         int temp;
