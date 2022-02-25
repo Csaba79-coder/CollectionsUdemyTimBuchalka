@@ -6,7 +6,11 @@ public class ListMain {
 
     public static void main(String[] args) {
 
+        new ListMenu().run();
+
+        /*
         GroceryList list = new GroceryList();
+
 
         ArrayList<String> resultList = new ArrayList<>();
 
@@ -25,5 +29,12 @@ public class ListMain {
 
         list.removeItem(2, resultList);
         System.out.println(resultList);
+
+        String searchItem = list.findItemByIndex("strawberry", resultList);
+        System.out.println(searchItem);
+        String noSuchElement = list.findItemByIndex("watermelon", resultList);
+        System.out.println(noSuchElement);
+
+         */
     }
 }

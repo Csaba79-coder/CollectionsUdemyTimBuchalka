@@ -30,14 +30,56 @@ public class GroceryList {
         }
     }
 
-    public void modifyGroceryItem(int position, String newItem, ArrayList<String> list) {
+    private void modifyGroceryItem(int position, String newItem, ArrayList<String> list) {
         list.set(position, newItem);
         System.out.println("Grocery item number " + (position + 1) + " has been modified to: " + newItem);
     }
 
-    public void removeItem(int position, ArrayList<String> list) {
-        list.remove(position);
+    public void modifyGroceryItem(String currentItem, String newItem, ArrayList<String> list) {
+        int position = findItemByItem(currentItem, list);
+        if (position >= 0) {
+            modifyGroceryItem(position, newItem, list);
+        }
+    }
+
+    private int findItemByItem(String newItem, ArrayList<String> list) {
+        return list.indexOf(newItem);
+    }
+
+    public boolean onFile(String item, ArrayList<String> list) {
+        int position = findItemByItem(item, list);
+        return position >= 0;
+    }
+
+    public void removeItem(String item, ArrayList<String> list) {
+        int position = findItemByItem(item, list);
+        if (position >= 0) {
+            removeItem(position + 1, list);
+        }
+    }
+
+    private void removeItem(int position, ArrayList<String> list) {
+        list.remove(position -1);
         System.out.println("The item has been removed from list!");
+    }
+
+    public String findItem(String searchItem, ArrayList<String> list) {
+        boolean exist = list.contains(searchItem);
+        /*for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals(searchItem)) {
+                searchItem = list.get(i);
+            }
+        }*/
+        return searchItem;
+    }
+
+    public String findItemByIndex(String searchItem, ArrayList<String> list) {
+        int position = list.indexOf(searchItem);
+        if (position >= 0) {
+            return list.get(position);
+        } else {
+            return "No such item!";
+        }
     }
 
     public ArrayList<String> getGroceryList() {
